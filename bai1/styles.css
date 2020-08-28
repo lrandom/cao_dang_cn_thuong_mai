@@ -1,0 +1,54 @@
+.wrapper{
+    width: 968px;
+    border:1px solid red;/*chỉ demo*/
+    margin: 0px auto;
+}
+
+.wrapper > .top-menu{
+    width: 100%;
+    border:1px solid red; /*chỉ demo*/
+    height: 50px;/*Chỉ lúc demo mới cho vào*/
+}
+
+.wrapper > .banner{
+    width: 100%;
+    border:1px solid red; /*chi demo*/
+    height: 100px; /*chi demo*/
+    margin-top:10px;
+}
+
+.wrapper > .main-content{
+    width: 100%;
+    margin-top:10px;
+    height: 400px;
+    border:1px solid red;
+}
+
+.wrapper > .main-content > .col-1{
+    width: 30%;
+    background-color: red;
+    height: 100%;/*demo*/
+    float: left;
+}
+
+.wrapper > .main-content > .col-2{
+    width: 30%;
+    background-color: purple;
+    height: 100%;
+    float: left;
+    margin-left: 5%;
+}
+
+.wrapper > .main-content > .col-3{
+    width: 30%;
+    background-color: yellow;
+    height: 100%;
+    float: right
+}
+
+.wrapper > .footer {
+    background-color: tomato;
+    margin-top:10px;
+    width:100%;
+    height: 150px;
+}
