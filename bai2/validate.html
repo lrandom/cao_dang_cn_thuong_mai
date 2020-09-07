@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="return validate()">
+        <div>
+            <label>Username</label>
+            <input type="text" name="username" id="username"/>
+            <div class="err"></div>
+        </div>
+
+        <div>
+            <label>Password</label>
+            <input type="password" name="password" id="password"/>
+            <div class="err"></div>
+        </div>
+
+        <div>
+            <input type="submit" value="submit"></input>
+        </div>
+    </form>
+
+    <script>
+        function validate(){
+            var errs = document.getElementsByClassName('err');
+            for (let i = 0; i < errs.length; i++) {
+                const element = errs[i];
+                element.innerHTML = '';
+            }
+            var username = 
+            document.getElementById('username');
+            var txtUsername = username.value;
+            if(txtUsername == ''){
+                //alert("Vui long nhap username");
+                username.nextElementSibling.innerHTML ="Vui long nhap username";
+                return false;
+            }
+
+            var password = document.getElementById('password')
+            var txtPassword = password.value;
+            if(txtPassword==''){
+                password.nextElementSibling.innerHTML='Vui long nhap password';
+                return false;
+            }
+
+        
+            return true;
+        }
+    </script>
+
+    <style>
+        .err{
+            color:red;
+        }
+    </style>
+</body>
+</html>

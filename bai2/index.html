@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="test">Nam</div>
+
+    <span>a</span>
+    <span>b</span>
+    <span>c</span>
+
+    <p class="php"></p>
+    <p class="php"></p>
+    <p class="php"></p>
+
+
+    <div id="test-2">
+        <span>A</span>
+        <span>B</span>
+        <span>C</span>
+    </div>
+    <div></div>
+    <button onclick="test()">Test</button>
+</body>
+
+<script>
+  function test(){
+      let nodeDiv = document.getElementById('test');
+      nodeDiv.innerText = "Nguyen Thanh Luan";
+
+      let nodeSpans = document.getElementsByTagName('span');//mang
+      for (let i = 0; i < nodeSpans.length; i++) {
+          let element = nodeSpans[i];
+          element.innerText= "Dong thu "+i;
+      }
+
+      let classPHP = document.getElementsByClassName('php');
+      for (let i = 0; i < classPHP.length; i++) {
+          const element = classPHP[i];
+          element.innerText = "Dong thu "+i;
+      }
+
+      let divParentNode = document.getElementById('test-2');
+      let childNodes = divParentNode.children;
+
+      let sibling = divParentNode.nextElementSibling;
+      //innerHTML
+      //value
+  }
+</script>
+</html>
