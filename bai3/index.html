@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+           //var node = $('p').remove();// <span>ABCD</span>
+           //alert(node);
+           //$('p').html('<span>EFGH</span>');
+           $('p').after('<p>hihi</p>');
+           $('p').before('<p>haha</p>');
+           $('ul').append('<li>C</li>');
+           
+           let a = $('img').attr('src');
+           $('img').attr('src','anhthiennhien.jpg');
+           
+           $('div').click(function(){
+               
+           })
+
+           $('button').click(function(){
+               $('div').fadeOut(3000, function(){
+                   alert("Im faded now");
+               }); //add display:none
+               
+               /*setTimeout(() => {
+                   //
+                   $('div').show();
+               }, 5000);*/
+
+               
+           })
+        });
+    </script> 
+</head>
+<body>
+    <!--<p>
+        <span>ABCD</span>
+    </p>
+
+    <ul>
+        <li>A</li>
+        <li>B</li>
+    </ul>
+
+    <img src="anhdep.jpg"/>
+
+    <div>
+        CLick
+    </div>
+
+    <div>
+        CLick
+    </div>-->
+
+    <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, similique eligendi, id ullam iste possimus quibusdam porro consectetur ut minus laboriosam quisquam a quaerat placeat, corrupti dolorem magni? Cum, inventore?
+    </div>
+
+    <button>Click me Please</button>
+</body>
+</html>

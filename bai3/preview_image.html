@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="preview_image">
+        <div class="large-image">
+            
+        </div>
+
+        <div class="thumbnails-wrapper">
+            <div class="thumbnail">
+                <img src="imgs/a.jpg"/>
+            </div>
+            <div class="thumbnail">
+                <img src="imgs/b.jpeg"/>
+            </div>
+            <div class="thumbnail">
+                <img src="imgs/c.jpg"/>
+            </div>
+            <div class="thumbnail">
+                <img src="imgs/d.jpg"/>
+            </div>
+            <div class="thumbnail">
+                <img src="imgs/a.jpg"/>
+            </div>
+            <div class="thumbnail">
+                <img src="imgs/e.jpg"/>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .preview_image{
+            width:800px;
+            height: 500px;
+            border:1px solid red;
+            margin:0px auto;
+        }
+
+        .large-image{
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .large-image img{
+            width:100%;
+            height: 100%;
+        }
+
+        .thumbnails-wrapper{
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .thumbnails-wrapper .thumbnail{
+            width:100px;
+            height: 100px;
+            overflow:hidden;
+        }
+
+        .thumbnails-wrapper .thumbnail img{
+            width:100px;
+            height: 100px;
+        }
+
+
+    </style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.thumbnail > img').click(function(){
+                let src = $(this).attr('src');
+                console.log(src);
+                $('.large-image').html('<img src="'+src+'"></img>');
+            })
+        });
+    </script>
+</body>
+</html>
