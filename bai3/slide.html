@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="slider">
+        <div class="imgs">
+            <div class="img">
+                <img src="imgs/a.jpg"/>
+            </div>
+            <div class="img">
+                <img src="imgs/e.jpg"/>
+            </div>
+            <div class="img">
+                <img src="imgs/c.jpg"/>
+            </div>
+            <div class="img">
+                <img src="imgs/d.jpg"/>
+            </div>
+            <div class="img">
+                <img src="imgs/b.jpeg"/>
+            </div>
+
+        </div>
+
+        <div>
+            <button class="btn-next">Next</button>
+            <button class="btn-prev">Prev</button>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+            $(document).ready(function () {
+                $('.btn-next').click(function(){
+                    let size = $('.imgs .img').length;//trả về độ dài của danh sách img
+                    let currentNode = $('.imgs .img').eq(size-1); //lấy về phần tử .img cuối cùng 
+                    let currentSrc = currentNode.find('img').attr('src'); //lấy về src của ảnh trong pt cuối
+                    let newNode = `<div class="img">
+                <img src="${currentSrc}"/>
+            </div>`; //tạo node mới
+                    $('.imgs').prepend(newNode); //đẩy node mới vào trước pt đầu tiên
+                    currentNode.remove(); //xoá node hiện tại
+                })
+
+                $('.btn-prev').click(function () { 
+                    let currentNode = $('.imgs .img').eq(0); //lấy về phần tử .img đầu tiên
+                    let currentSrc = currentNode.find('img').attr('src');
+                    let newNode = `<div class="img">
+                <img src="${currentSrc}"/>
+            </div>`;
+                    $('.imgs').append(newNode); //đẩy node mới vào sau phần tử cuối cùng
+                    currentNode.remove();
+                })
+            });
+    </script>
+    <style>
+        .imgs{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .imgs .img{
+            position: absolute;
+            width: 100%;
+            height:250px;
+        }
+
+        .imgs .img img{
+            width:100%;
+            height: 100%;
+        }
+
+        .slider{
+            width:500px;
+            height: 300px;
+            margin:0px auto;
+        }
+
+    </style>
+
+
+</body>
+</html>
